@@ -1,6 +1,6 @@
 container_image = file:///projects/bacteriology_tran_data/apptainer/bakta1.10.3.sif
 
-executable = 04-annotation.sh
+executable = 04_annotation.sh
  
 arguments = $(reference) $(request_cpus)
 

@@ -1,6 +1,6 @@
 container_image = file:///staging/ptran5/apptainer/eggnog.sif
 
-executable = 05-eggnog.sh
+executable = 05_eggnog.sh
 
 arguments = $(sample) $(staging)
 		

@@ -6,11 +6,17 @@ this workflow processes long-read (oxford nanopore) data, and filters the data, 
 
 # Workflow steps
 
+![Workflow design](https://github.com/UUW-Madison-Bacteriology-Bioinformatics/variant-annotation/blob/main/workflow.png)
+
 1. Filters using `Filtlong v0.2.1`, keeping 95% of best reads with the flag `-p 95`
 
 2. Maps the filtered data to reference genomes using `minimap2 2.22-r1101`, a mapper for long-read sequences. It uses the flag `-x map-ont`
 
 3. Using samtools `samtools 1.13` to perform a alignment file format conversions.
+
+4. Uses `Bakta version 10.0.3` to functionally annotate the reference genomes
+
+5. Uses EGGNOG mapper to annotate the bakta-annotated proteins (`.faa) into different functional annotations like COG, KEGG, etc.
 
 # Input
 The folder structure is a main folder, with a subfolder called "reads", and any reference file with the format {REFERENCE}_assembly.fasta
