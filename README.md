@@ -6,7 +6,7 @@ this workflow processes long-read (oxford nanopore) data, and filters the data, 
 
 # Workflow steps
 
-![Workflow design](https://github.com/UUW-Madison-Bacteriology-Bioinformatics/variant-annotation/blob/main/workflow.png)
+![Workflow design](https://github.com/UW-Madison-Bacteriology-Bioinformatics/variant-annotation/blob/main/workflow.png)
 
 1. Filters using `Filtlong v0.2.1`, keeping 95% of best reads with the flag `-p 95`
 
