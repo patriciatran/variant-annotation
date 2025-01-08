@@ -21,6 +21,9 @@ These scripts are meant to be run by HTCondor, a workflow manager that takes in 
 
 5. Uses `EGGNOG mapper 2.1.12` to annotate the bakta-annotated proteins (`.faa`) into different functional annotations like COG, KEGG, etc.
 
+> [!NOTE]
+> You can run steps 4 and 5 without running steps 1,2,3.
+
 # Repository files
 
 This repository contains 2 folders: `recipes` and `scripts`.
@@ -123,6 +126,16 @@ repeat for 02,03,04 and 05.
 This workflow will create large files. I recommend using Globus.org to transfer files to your ResearchDrive or to your personal endpoint.
 For instructions, please visit: https://chtc.cs.wisc.edu/uw-research-computing/globus
 
+## Importing to Geneious for SNP Identification
+
+If you plan on using this in Geneious to use their SNP identification tool I suggest these steps
+1) Make a folder for each reference
+2) Load the gbff file from bakta - this ensures that you will have the gene annotations
+3) Import the sorted.bam files from Step 03 (samtools output) to the corresponding folders
+4) Use the SNP identification tool, minimum cov 10x and 95% coverage
+5) Once you have the output click on Annotations > Variants, and Columns > Manage Columns. Make sure all columns, including the gene names, are shown in the table. Export to CSV or TSV
+6) Use Python or R or process all the tables.
+
 ## References
 This pipeline uses the following tools:
 
@@ -134,5 +147,7 @@ This pipeline uses the following tools:
 
 ## Citation
 If you find this pipeline helpful, please consider citing this repository.
+
+
 
 
