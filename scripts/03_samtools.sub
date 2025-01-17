@@ -1,7 +1,5 @@
 container_image = file:///projects/bacteriology_tran_data/apptainer/samtools.sif
 
-staging = /staging/ptran5/MoLab/charlie/SummerData
-
 arguments = $(staging) $(sample) $(reference)
 
 executable = 03_samtools.sh
@@ -18,7 +16,7 @@ transfer_output_remaps = "$(sample)_vs_$(reference).bam=file://$(staging)/mappin
 requirements = (HasCHTCStaging == true)
 
 request_cpus = 16
-request_memory = 10GB
+request_memory = 20GB
 request_disk = 50GB      
 
-queue sample,reference from SummerDataList.txt
+queue sample,reference,staging from Samples_and_Ref.txt 

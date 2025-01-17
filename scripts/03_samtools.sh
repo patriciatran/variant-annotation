@@ -24,3 +24,4 @@ echo "create coverage tsv file"
 samtools depth ${SAMPLE}_vs_${REF}.sorted.bam > ${SAMPLE}_vs_${REF}.coverage.tsv
 
 echo "done"
+
